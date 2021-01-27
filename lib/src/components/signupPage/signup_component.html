@@ -1,0 +1,28 @@
+<div class="container">
+    <h1 class="title">Sign up</h1>
+    <form>
+        <div class="form-group">
+            <label for="name" class="title">Username&nbsp;*</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="regDetails.username" required>
+        </div>
+        <div class="form-group">
+            <label for="email" class="title">Email&nbsp;*</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="regDetails.email" required>
+        </div>
+        <div class="form-group">
+            <label for="password" class="title">Password&nbsp;*</label>
+            <input type="password" class="form-control" id="password" [(ngModel)]="regDetails.password" required>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <button id="buttonSignUP" type="submit" class="btn btn-primary" (click)="onSubmit()"><i style="visibility:hidden;" id="spinnerSignIn" class="fa fa-spinner fa-spin"></i>Sign up</button>
+            </div>
+            <small class="col_text-right">*&nbsp;Required</small>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <p class="google_feedback" id="feedbackSignIn"></p>
+            </div>
+        </div>
+    </form>
+</div>

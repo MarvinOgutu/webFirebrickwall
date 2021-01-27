@@ -1,0 +1,137 @@
+<div class="container">
+
+    <main>
+        <div class="main__container">
+            <!-- MAIN TITLE STARTS HERE -->
+
+            <div class="main__title">
+                <div class="main__greeting">
+                    <h1>Hello {{userName}}</h1>
+                    <p>Welcome to your admin dashboard</p>
+                </div>
+            </div>
+
+            <!-- MAIN TITLE ENDS HERE -->
+
+            <!-- MAIN CARDS STARTS HERE -->
+            <div class="main__cards">
+                <div class="card">
+                    <div class="card_inner">
+                        <i
+                                class="fa fa-user-o fa-2x text-lightblue"
+                                aria-hidden="true"
+                        ></i>
+                        <div>
+                            <span class="font-bold text-title">Account</span>
+                            <p class="text-primary-p">{{verificationStatus}}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="card_inner">
+                        <i class="material-icons" (click)="copyString()">content_copy</i>
+                        <div>
+                            <p class="text-primary-p">Api key</p>
+                            <span class="font-bold text-title">##hashed##</span>
+                            <p class="text-primary-p">$25/week</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+
+                    <div class="card_inner">
+                        <i
+                                class="fa fa-calendar fa-2x text-red"
+                                aria-hidden="true"
+                        ></i>
+                        <div>
+                            <span class="font-bold text-title">Api Expiry</span>
+                            <p class="text-primary-p">{{apiKeyExpiry}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+
+                    <div class="card_inner">
+                        <i
+                                class="material-icons"
+                        >assessment</i>
+                        <div>
+                            <p class="text-primary-p">Monthly quota</p>
+                            <span class="font-bold text-title">$2.5 for every</span>
+                            <p class="text-primary-p">40k requests</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MAIN CARDS ENDS HERE -->
+
+            <!-- CHARTS STARTS HERE -->
+            <div class="charts">
+                <div class="charts__left">
+                    <div class="charts__left__title">
+                        <div>
+                            <h1>Account Status</h1>
+                            <p>{{activeStatus}}</p>
+                            <u (click)="callToActionClick()">{{callToAction}}</u><br>
+                            <u id="resend" (click)="callToActionAgain()">Resend verification</u>
+                            <form style="visibility:hidden;" id="verifyForm">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" [(ngModel)]="trackingNumber" id="mtcn" placeholder="Tracking Number(MTCN)" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" [(ngModel)]="senderCountry" class="form-control" id="your country" placeholder="country" required>
+                                </div>
+                                <div class="col-auto">
+                                    <button id="login" type="submit" class="btn btn-primary" (click)="onSubmit()"><i style="visibility:hidden;" id="spinner" class="fa fa-spinner fa-spin"></i>Submit   </button>
+                                </div>
+                            </form>
+                            <br>
+                            <label>reference: https://medium.com/firebrickwall/using-firebrickwall-api-ed727b2a6314</label>
+                        </div>
+                    </div>
+                    <div id="apex1"></div>
+                </div>
+
+                <div class="charts__right">
+                    <div class="charts__right__title">
+                        <div>
+                            <h1>Stats Reports</h1>
+                            <i id="refreshbutton" class="material-icons" (click)="onRefresh()">refresh</i>
+                            <i style="visibility:hidden;" id="spinnerLoading" class="fa fa-spinner fa-spin"></i>
+                        </div>
+                    </div>
+
+                    <div class="charts__right__cards">
+                        <div class="card1">
+                            <h2>Encryption</h2>
+                            <p>{{encryptions}}</p>
+                        </div>
+
+                        <div class="card2">
+                            <h2>decryption</h2>
+                            <p>{{decryptions}}</p>
+                        </div>
+
+                        <div class="card3">
+                            <h2>Total</h2>
+                            <p>{{total}}</p>
+                        </div>
+
+                        <div class="card4">
+                            <h2>Cost</h2>
+                            <p>${{cost}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CHARTS ENDS HERE -->
+        </div>
+    </main>
+
+</div>

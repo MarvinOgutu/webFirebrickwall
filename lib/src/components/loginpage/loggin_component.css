@@ -1,0 +1,35 @@
+.container {
+  max-width: 455px;
+  margin: 0 auto;
+  padding: 70px 0;
+  padding: 5vw;
+  background-color: lightblue;
+  position: center;
+}
+.title {
+  color: black;
+}
+.col_text-right {
+  color: black;
+}
+.google_feedback {
+    color: red;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+.spinner {
+    visibility: hidden;
+}

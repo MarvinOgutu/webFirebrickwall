@@ -1,0 +1,31 @@
+<div class="container">
+    <h1 class="title">log in</h1>
+    <form>
+        <div class="form-group">
+            <label for="email" class="title">Email&nbsp;*</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="logDetails.email" required>
+        </div>
+        <div class="form-group">
+            <label for="password" class="title">Password&nbsp;*</label>
+            <input type="password" class="form-control" id="password" [(ngModel)]="logDetails.password" required>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <button id="login" type="submit" class="btn btn-primary" (click)="onSubmit()"><i style="visibility:hidden;" id="spinner" class="fa fa-spinner fa-spin"></i>log in</button>
+            </div>
+            <a class="a" (click)="onForgotPwd()"><u>forgot password?</u></a>
+            <small class="col_text-right">*&nbsp;Required</small>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                <a [routerLink]="RoutePaths.signup.toUrl()"
+                   [routerLinkActive]="'active'">don't have an account? Sign up.</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row-auto">
+                <p class="google_feedback" id="feedbackLogin"> </p>
+            </div>
+        </div>
+    </form>
+</div>
